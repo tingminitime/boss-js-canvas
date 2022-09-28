@@ -1,0 +1,26 @@
+.ctrl
+  transition: all 2s
+
+.ctrl__input
+  display: none
+
+.ctrl__input:checked + .scene
+  background-position: 0 100%
+  .nightText
+    display: none
+  .dayText
+    display: block
+  .allStars
+    opacity: 0
+  h1, h5, p
+    color: #222
+  .building
+    filter: brightness(105%)
+  .moon
+    top: -100px
+    opacity: 0
+  .sun
+    top: 100px
+    opacity: 1
+  .blueBlock
+    background-color: #fff

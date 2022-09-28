@@ -1,0 +1,21 @@
+@import 'reboot/_reset'
+@import 'reboot/_variable'
+@import 'reboot/_mixins'
+@import 'reboot/_base'
+@import 'animation/_starsAni'
+@import 'structure/_controller'
+@import 'structure/_text'
+@import 'structure/_house'
+@import 'structure/_stars'
+
+.container
+  +flexCenter
+  +size(100%)
+
+.scene
+  +size(700px, 500px, 16px)
+  position: relative
+  background: $sceneGradient
+  background-size: 100% 300%
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.3)
+  overflow: hidden

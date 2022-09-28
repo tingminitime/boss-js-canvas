@@ -1,0 +1,103 @@
+.building
+  position: absolute
+  right: 0
+  bottom: 0
+  transform: scale(0.95)
+
+[class^="house"]
+  position: absolute
+  right: 0
+  bottom: 0
+
+.house1
+  +size(180px, 200px)
+  background-color: $colorGreyLight
+  box-shadow: inset -50px 0px $colorGreyNormal
+  z-index: 30
+  > .window
+    +size(40px, 100px, 20px)
+    +flexCenter
+    background-color: $colorGreyNormal
+    box-shadow: inset 8px 4px $colorGreyDark
+    flex-direction: column
+    margin-top: 40px
+    margin-left: 70px
+    gap: 8px
+    > .circle
+      +size(20px, 20px, 20px)
+      background-color: $colorWindowGrey
+      transform: translateX(2px)
+
+.house2
+  +size(240px, 170px)
+  right: 130px
+  background-color: $colorGreyLight
+  box-shadow: inset 0px 15px $colorShadowBlueLight, inset -72px 0px $colorGreyNormal
+  z-index: 20
+  > .door
+    +size(40px, 80px, 20px 20px 0 0)
+    background-color: $colorBackground
+    box-shadow: inset 10px 2px $colorShadowBlue
+    position: absolute
+    left: 45px
+    bottom: 0
+
+.house3
+  +size(320px, 300px)
+  +flexCenter
+  background-color: $colorGreyLight
+  z-index: 10
+  > .wall
+    +flexCenter(center, flex-start)
+    flex: 1
+    height: 100%
+    position: relative
+    &::before
+      +size(105%, 20px)
+      content: ''
+      display: block
+      position: absolute
+      top: -20px
+      left: 50%
+      transform: translateX(-50%)
+      background-color: inherit
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1)
+    &:nth-child(1)
+      +wall($colorGreyLight, 10, 8px, 1)
+    &:nth-child(2)
+      +wall($colorGreyNormal, 14, 0, 2)
+    &:nth-child(3)
+      +wall($colorGreyDark, 10, -8px, 1)
+    > .window
+      +size(24px, 50px, 12px 12px 0 0)
+      background-color: $colorBackground
+      margin-top: 30px
+  > .roof
+    +halfCircle(150px)
+    background: $roofGradient
+    position: absolute
+    top: -170px
+    right: 5px
+    > .roofTop
+      +halfCircle(14px)
+      background-color: #fff
+      position: absolute
+      left: 50%
+      top: -14px
+      transform: translateX(-50%)
+      > .cross
+        +size(4px, 30px)
+        background-color: #fff
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 10px
+        &:before
+          +size(20px, 4px)
+          background-color: #fff
+          content: ''
+          display: block
+          position: absolute
+          left: 50%
+          transform: translateX(-50%)
+          bottom: 15px

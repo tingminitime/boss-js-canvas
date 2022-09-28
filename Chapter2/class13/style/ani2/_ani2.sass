@@ -1,0 +1,41 @@
+@mixin size($w, $h:$w)
+  width: $w
+  height: $h
+
+.middle
+  width: 100%
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+
+@for $i from 1 through 30
+  .container#{$i}
+    transform: rotate(#{ $i * (360 / 30) }deg)
+    display: flex
+    justify-content: center
+    align-items: center
+    .aniBall
+      animation-delay: $i * -.1s
+
+.aniBall
+  +size(20px)
+  background-color: #fff
+  border-radius: 50%
+  position: absolute
+  animation-name: ballAni
+  animation-duration: 2s
+  animation-iteration-count: infinite
+  animation-direction: alternate
+  animation-fill-mode: both
+
+@keyframes ballAni
+  0%
+    transform: translateX(0px)
+    background-color: yellow
+  50%
+    +size(50px)
+  100%
+    transform: translateX(200px)
+    background-color: red

@@ -1,0 +1,20 @@
+@mixin size($w, $h:$w, $bdrs:0)
+  width: $w
+  height: $h
+  border-radius: $bdrs
+
+@mixin flexCenter($j:center, $a:center)
+  display: flex
+  justify-content: $j
+  align-items: $a
+
+@mixin wall($color, $flex, $windowPan:0, $z:1)
+  background-color: $color
+  flex: $flex
+  &:before
+    z-index: $z
+  .window
+    box-shadow: inset $windowPan 2px $colorShadowBlue
+
+@mixin halfCircle($r)
+  +size($r*2, $r, $r $r 0 0)
